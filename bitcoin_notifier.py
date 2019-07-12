@@ -49,7 +49,7 @@ def tracker(old_bitcoin):
         # Bitcoin data is the first element of the list
         latest_bitcoin = response_json[0]['price_usd']
 
-        # Make a comparison and fine greater value based on pass parameter into toaster
+        # Make a comparison and find greater value based on pass parameter into toaster
         if float(latest_bitcoin) > float(old_bitcoin):
             toaster.show_toast("Bitcoin Price Grow",
                        "from ${:,.2f} to ${:,.2f}".format(float(old_bitcoin),float(latest_bitcoin)),
@@ -74,7 +74,7 @@ def tracker(old_bitcoin):
         # stored latest value into old_bitcoin variable
         old_bitcoin = latest_bitcoin
 
-        # finally stored the value into object by storeData function
+        # finally stored the value into pickle file by storeData function
         storeData(old_bitcoin)
     
 if __name__ == '__main__':
